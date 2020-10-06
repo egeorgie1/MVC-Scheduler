@@ -1,0 +1,25 @@
+﻿@model MVCScheduler.Models.Presentation
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body class="text-center">
+
+    <h1>Thank you, @Model.Speaker!</h1>
+
+    <p>
+       We will be there @($"on the {Model.PresDateAndTime:d} at {Model.PresDateAndTime:t}") to hear your presentation about @Model.Topic!
+    </p>
+
+    Click <a class="nav-link" asp-action="ListAllPres">here</a>
+    to see the full list of presentations and <a class="nav-link" asp-action="ListShorterPres">here</a> to see all 
+    presentations with a duration shorter than one hour.
+</body>
+</html>

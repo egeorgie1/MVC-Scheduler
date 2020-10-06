@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MVCScheduler.Models.Presentation>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>List</title>
+</head>
+<body>
+    <div class="panel-body">
+        <h2>Scheduled presentations:</h2>
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Presentation Number</th>
+                    <th>Topic</th>
+                    <th>Speaker</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Length</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MVCScheduler.Models.Presentation p in Model)
+                {
+                <tr>
+                    <td>@p.PresNumber</td>
+                    <td>@p.Topic</td>
+                    <td>@p.Speaker</td>
+                    <td>@($"{p.PresDateAndTime:d}")</td>
+                    <td>@($"{p.PresDateAndTime:t}")</td>
+                    <td>@p.PresLength (in min.)</td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
